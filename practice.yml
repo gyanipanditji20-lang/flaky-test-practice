@@ -1,0 +1,22 @@
+name: practice-tests
+on:
+  workflow_dispatch:
+
+jobs:
+  login-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node flaky.js 0.3
+
+  search-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node flaky.js 0.1
+
+  checkout-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node flaky.js 0
